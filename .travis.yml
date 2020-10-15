@@ -1,9 +1,9 @@
 language: cpp
-#before_install:
-#  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-#  - sudo apt-get -q update
-#  - sudo apt-get -y install g++-7
-#  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 60
+before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get -q update
+  - sudo apt-get -y install g++-7
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 60
 script:
 - cmake .
 - cmake --build .
