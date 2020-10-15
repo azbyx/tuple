@@ -13,6 +13,6 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-   - curl -T custom_tuple-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uazbyx:$BINTRAY_API_K "https://api.bintray.com/content/azbyx/azbyx/tuple/$TRAVIS_BUILD_NUMBER/custom_tuple-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-#  on:
-#    branch: main
+   - curl -T custom_tuple-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uazbyx:$BINTRAY_API_K "https://api.bintray.com/content/azbyx/tuple/tuple/$TRAVIS_BUILD_NUMBER/custom_tuple-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  on:
+    branch: main
