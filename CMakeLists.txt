@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.2)
 
-if($ENV{TRAVIS_BUILD_NUMBER})
-	project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}  LANGUAGES CXX)
-else()
-	project(ip_filter VERSION 0.0.1  LANGUAGES CXX)
-endif()
-
 set(NAME_EXECUTABLE "custom_tuple")
 set(NAME_TESTS "gtest")
+
+if($ENV{TRAVIS_BUILD_NUMBER})
+	project(${NAME_EXECUTABLE} VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}  LANGUAGES CXX)
+else()
+	project(${NAME_EXECUTABLE} VERSION 0.0.1  LANGUAGES CXX)
+endif()
 
 #add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/googletest")
 
