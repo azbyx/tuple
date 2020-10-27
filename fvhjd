@@ -1,0 +1,41 @@
+[33mcommit 72346059477c10c0b9bb35e67cfd84b97c9d8436[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: azbyx <azbyx@inbox.ru>
+Date:   Tue Oct 27 18:51:01 2020 +0300
+
+    add .gitignore
+
+[33mcommit 9f9c3e552b238b0eb416e82236f08e4a34a884d3[m
+Author: azbyx <azbyx@inbox.ru>
+Date:   Thu Oct 15 11:45:16 2020 +0300
+
+    customization CD_#2
+
+[33mcommit c5e12871169077e2c9130a3fca097afe8ad9b2c0[m
+Author: azbyx <azbyx@inbox.ru>
+Date:   Thu Oct 15 11:39:45 2020 +0300
+
+    customization CD
+
+[33mcommit d06c2b0a53cf753555a56b54bc870f8953f846e6[m
+Author: azbyx <azbyx@inbox.ru>
+Date:   Thu Oct 15 10:39:58 2020 +0300
+
+    customization CI support C++17
+
+[33mcommit a07268477daff1a860a958c9b3b7bf21d5892d69[m
+Author: azbyx <azbyx@inbox.ru>
+Date:   Thu Oct 15 10:36:47 2020 +0300
+
+    customization CI
+
+[33mcommit 675c27189b91c4ed5b7656c78271a67ee3e0b48b[m
+Author: azbyx <azbyx@inbox.ru>
+Date:   Thu Oct 15 10:31:10 2020 +0300
+
+    add CI/CD
+
+[33mcommit cc3c73cdfcff108897ae7da6df131f4e6d788bfb[m
+Author: azbyx <azbyx@inbox.ru>
+Date:   Wed Oct 14 21:58:08 2020 +0300
+
+    first
