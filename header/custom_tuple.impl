@@ -1,4 +1,54 @@
+template<typename H, typename... Tail>
+custom_tuple<H, Tail...>::custom_tuple(H val, Tail... tail)
+            : custom_tuple<Tail...>(tail...), value(val){}
 
+
+template<typename H, typename... Tail>
+template<typename... Args>
+void custom_tuple<H, Tail...>::operator=(const custom_tuple<Args...>& other)
+{
+    assign_tuple(*this, other, std::make_index_sequence<sizeof...(Args)>{});
+}
+
+
+template<typename H, typename... Tail>
+template<typename... Args>
+custom_tuple<H, Tail...>::custom_tuple(const custom_tuple<Args...>& other):
+            custom_tuple(other, std::make_index_sequence<sizeof...(Args)>{}){}
+
+
+template<typename H, typename... Tail>
+template<typename T1, typename T2, size_t ... Indices>
+void custom_tuple<H, Tail...>::assign_tuple(T1& th, const T2& other, std::index_sequence<Indices...>)
+{
+    ((custom_get<Indices>(th) = custom_get<Indices>(other)), ...);
+}
+
+
+template<typename H, typename... Tail>
+template<typename Tuple, size_t ... Indices>
+custom_tuple<H, Tail...>::custom_tuple(Tuple&& other, std::index_sequence<Indices...>):
+        custom_tuple(custom_get<Indices>(std::forward<Tuple>(other))...){}
+
+
+template<size_t Is, typename Head, typename... Args>
+decltype(auto) tmp::getter<Is, Head, Args...>::get(const custom_tuple<Head, Args...>& t)
+{
+    return getter<Is - 1, Args...>::get(t);
+}
+
+
+template<typename Head, typename... Args>
+decltype(auto) tmp::getter<0, Head, Args...>::get(const custom_tuple<Head, Args...>& t)
+{
+    return t.value;
+}
+
+template<size_t Is, typename Head, typename... Args>
+decltype(auto) custom_get(const custom_tuple<Head, Args...>& t)
+{
+    return tmp::getter<Is, Head, Args...>::get(t);
+}
 
 template <typename... Args>
 auto make_custom_tuple(Args&&... args)
