@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cassert>
-#include "custom_tuple.h"
+#include "../header/custom_tuple.h"
 
 
 void do_it(){
@@ -48,7 +48,8 @@ int main(int, char**) {
     assert(age == 23);
     assert(department == "Sale");
 
-    //do_it();
+    do_it();
 
-    return 0; }
+    return 0;
+}
 

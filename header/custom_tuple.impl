@@ -1,0 +1,14 @@
+
+
+template <typename... Args>
+auto make_custom_tuple(Args&&... args)
+{
+    return custom_tuple<std::decay_t<Args>...>(std::forward<Args>(args)...);
+}
+
+
+template <typename... Args>
+auto custom_tie(Args&... args)
+{
+    return custom_tuple<Args&...>(args...);
+}

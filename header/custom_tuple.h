@@ -69,16 +69,11 @@ struct custom_tuple<>{};
 
 
 template <typename... Args>
-auto make_custom_tuple(Args&&... args)
-{
-    return custom_tuple<std::decay_t<Args>...>(std::forward<Args>(args)...);
-}
-
+auto make_custom_tuple(Args&&... args);
 
 template <typename... Args>
-auto custom_tie(Args&... args)
-{
-    return custom_tuple<Args&...>(args...);
-}
+auto custom_tie(Args&... args);
+
+#include "custom_tuple.impl"
 
 #endif // CUSTOM_TUPLE_H_INCLUDED
